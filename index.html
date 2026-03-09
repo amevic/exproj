@@ -411,7 +411,18 @@ The results demonstrate that eXProj provides stable and interpretable explanatio
 
     <div class="content-section" id="conclusion">
       <h2>Conclusion</h2>
-      <p>TODO: Add Conclusion</p>
+      <p>This work introduces a projection-based explanatory paradigm for vector-valued learning that shifts the focus from output-wise attribution to geometric relationships between input features and the output subspace. Rather than treating each output independently, eXProj grounds explanations in the structural geometry of the prediction space, offering a perspective that can complement existing post-hoc methods.
+      The eXProj framework characterises multi-output model behaviour through the alignment of input features with the subspace spanned by predicted outputs, as quantified by the projective correlation coefficient~$\rho_s$. Features with high $|\rho_s|$ capture shared predictive structure, variables that the model relies on to influence multiple outputs in a coordinated manner. In contrast to per-output attribution, this formulation reveals how predictive information is distributed across the joint output space, exposing both shared drivers and output-specific influences within a single explanatory pass.
+     
+        Beyond interpretability, the projection-based structure supports model diagnostics. Stable, high-alignment projections suggest robust and generalisable predictive dependencies, whereas inconsistent or counterintuitive projections may indicate spurious correlations, data leakage, or representation artefacts. The sign of the projection coefficient provides directional information that enables semantic validation against domain knowledge, allowing practitioners to assess whether learned relationships are physically or causally plausible. 
+
+        The experimental results indicate that eXProj achieves competitive stability while substantially reducing computation time and explanation complexity relative to established methods. Its deterministic formulation eliminates variance due to sampling, which is advantageous in regulated or safety-critical settings where reproducibility of explanations is required. However, the framework is specifically designed for multi-output regression with high-dimensional inputs and correlated outputs and offers no additional explanatory value in single-output or low-dimensional settings.
+
+
+Several limitations should be noted. First, the stability of the underlying ProjSe selection depends on the spectral properties of the output kernel matrix; when this matrix has low effective rank, multiple features may exhibit indistinguishable projection correlations, leading to non-unique rankings. Second, the current evaluation is restricted to multi-output regression tasks; applicability to multi-label classification or multivariate time series remains to be validated. Third, a comprehensive evaluation using all available Quantus metrics was not feasible due to their limited formulation for vector-valued prediction models; the metrics used nonetheless provide a conservative baseline for assessing explanation dispersion and cognitive load in multi-output contexts. 
+Developing and adapting xAI evaluation metrics specifically for multi-output settings remains an important direction for future work.
+Fourth, the human-centred evaluation, while indicating consistent satisfaction across expert and non-expert users, was exploratory in nature and involved a relatively homogeneous participant pool. A more rigorous user study with controlled comparisons against alternative explanation formats is needed to draw stronger conclusions about interpretability. Finally, the projection-based explanation captures linear alignment with the output subspace and may not fully reflect nonlinear feature interactions learned by the underlying model. 
+      </p>
     </div>
 
     <!-- Step 7 End: Add your paper conclusion -->
