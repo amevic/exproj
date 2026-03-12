@@ -99,7 +99,7 @@ The results demonstrate that eXProj provides stable and interpretable explanatio
       <p>eXProj explains multi-output models by projecting input features onto the subspace spanned by predicted outputs. Unlike traditional methods that explain each output independently, eXProj computes a single <strong>projection correlation coefficient ρ</strong> per feature that captures its alignment with the joint output space.</p>
       
       <div class="figure-container">
-        <img src="Assets/exproj_visualisation-v2__2_.png" alt="eXProj Method Overview" style="max-width: 100%; height: auto;" />
+        <img src="Assets/exproj_visualisation-v2 (2).png" alt="eXProj Method Overview" style="max-width: 100%; height: auto;" />
         <p class="figure-caption">
           <strong>Figure 1: eXProj framework overview.</strong> A black-box model maps high-dimensional input features to multiple correlated outputs Ŷ₁, Ŷ₂, …, Ŷₙ. The eXProj method projects input features onto the subspace spanned by all predicted outputs, computing projection correlation coefficients ρ that quantify each feature's alignment with the joint output space. Positive ρ coefficients (green) indicate direct influence, negative ρ (red) indicate inverse influence, and near-zero ρ (gray) indicate negligible contribution. This approach reveals shared and output-specific structures while providing transparent and interpretable explanations.
         </p>
