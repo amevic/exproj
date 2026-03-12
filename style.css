@@ -306,3 +306,16 @@ h2 {
 .dark-mode .nav a:hover {
   color: #3498db;
 }
+
+.figure-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.figure-caption {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: left;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
